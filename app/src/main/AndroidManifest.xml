@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".OrderConfirmed"
+            android:label="@string/title_activity_order_confirmed"
+            android:parentActivityName=".InredientsSelector"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.app.foodapp.InredientsSelector" />
+        </activity>
+        <activity
+            android:name=".Settings"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".Menu"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.app.foodapp.Menu" />
+        </activity>
+        <activity
             android:name=".InredientsSelector"
             android:label="@string/title_activity_inredients_selector"
             android:parentActivityName=".Menu"
