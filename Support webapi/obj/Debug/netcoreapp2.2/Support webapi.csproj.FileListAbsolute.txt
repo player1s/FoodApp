@@ -1,0 +1,14 @@
+C:\mindenJoSHasztalan\SecondSun\Legacy\Projects\FoodApp\Support webapi\bin\Debug\netcoreapp2.2\Support webapi.deps.json
+C:\mindenJoSHasztalan\SecondSun\Legacy\Projects\FoodApp\Support webapi\bin\Debug\netcoreapp2.2\Support webapi.runtimeconfig.json
+C:\mindenJoSHasztalan\SecondSun\Legacy\Projects\FoodApp\Support webapi\bin\Debug\netcoreapp2.2\Support webapi.runtimeconfig.dev.json
+C:\mindenJoSHasztalan\SecondSun\Legacy\Projects\FoodApp\Support webapi\bin\Debug\netcoreapp2.2\Support webapi.dll
+C:\mindenJoSHasztalan\SecondSun\Legacy\Projects\FoodApp\Support webapi\bin\Debug\netcoreapp2.2\Support webapi.pdb
+C:\mindenJoSHasztalan\SecondSun\Legacy\Projects\FoodApp\Support webapi\obj\Debug\netcoreapp2.2\Support webapi.csprojAssemblyReference.cache
+C:\mindenJoSHasztalan\SecondSun\Legacy\Projects\FoodApp\Support webapi\obj\Debug\netcoreapp2.2\Support webapi.csproj.CoreCompileInputs.cache
+C:\mindenJoSHasztalan\SecondSun\Legacy\Projects\FoodApp\Support webapi\obj\Debug\netcoreapp2.2\Support webapi.RazorAssemblyInfo.cache
+C:\mindenJoSHasztalan\SecondSun\Legacy\Projects\FoodApp\Support webapi\obj\Debug\netcoreapp2.2\Support webapi.RazorAssemblyInfo.cs
+C:\mindenJoSHasztalan\SecondSun\Legacy\Projects\FoodApp\Support webapi\obj\Debug\netcoreapp2.2\Support webapi.AssemblyInfoInputs.cache
+C:\mindenJoSHasztalan\SecondSun\Legacy\Projects\FoodApp\Support webapi\obj\Debug\netcoreapp2.2\Support webapi.AssemblyInfo.cs
+C:\mindenJoSHasztalan\SecondSun\Legacy\Projects\FoodApp\Support webapi\obj\Debug\netcoreapp2.2\Support webapi.RazorTargetAssemblyInfo.cache
+C:\mindenJoSHasztalan\SecondSun\Legacy\Projects\FoodApp\Support webapi\obj\Debug\netcoreapp2.2\Support webapi.dll
+C:\mindenJoSHasztalan\SecondSun\Legacy\Projects\FoodApp\Support webapi\obj\Debug\netcoreapp2.2\Support webapi.pdb
