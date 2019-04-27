@@ -86,8 +86,15 @@ public class Menu extends AppCompatActivity implements PokemonAdapter.OnListItem
                 } else {
                     System.out.println("Error getting documents." + task.getException());
                 }
-                pokemons.add(new Pokemon("Bulbasaur", R.drawable.p1, 1, 12));
-                pokemons.add(new Pokemon("Ivysaur", R.drawable.p2, 2, 43));
+
+                /*
+                int resid = R.drawable.p1;
+                System.out.println(resid);
+                // finding out the id of the given pic
+                */
+
+                //pokemons.add(new Pokemon("Bulbasaur", R.drawable.p1, 1, 12));
+                //pokemons.add(new Pokemon("Ivysaur",7000123, 2, 43));
                 mPokemonAdapter = new PokemonAdapter(pokemons, listener);
                 mPokemonList.setAdapter(mPokemonAdapter);
             }

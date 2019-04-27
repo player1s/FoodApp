@@ -32,7 +32,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         viewHolder.name.setText(mPokemons.get(position).getName());
         viewHolder.price.setText(Integer.toString(mPokemons.get(position).getPrice()));
-//        viewHolder.icon.setImageResource(mPokemons.get(position).getIconId());
+        viewHolder.icon.setImageResource(mPokemons.get(position).getIconId());
     }
 
     public int getItemCount() {
