@@ -12,33 +12,33 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".OrderConfirmed"
+            android:name=".Logic.OrderConfirmed.OrderConfirmed"
             android:label="@string/title_activity_order_confirmed"
-            android:parentActivityName=".InredientsSelector"
+            android:parentActivityName=".Logic.IngredientsSelector.InredientsSelector"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.app.foodapp.InredientsSelector" />
+                android:value=".Logic.IngredientsSelector.InredientsSelector" />
         </activity>
         <activity
-            android:name=".Settings"
+            android:name=".Logic.Settings.Settings"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".Menu"
+            android:parentActivityName=".Logic.MainActivityMenu.Menu"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.app.foodapp.Menu" />
+                android:value=".Logic.MainActivityMenu.Menu" />
         </activity>
         <activity
-            android:name=".InredientsSelector"
+            android:name=".Logic.IngredientsSelector.InredientsSelector"
             android:label="@string/title_activity_inredients_selector"
-            android:parentActivityName=".Menu"
+            android:parentActivityName=".Logic.MainActivityMenu.Menu"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.app.foodapp.Menu" />
+                android:value=".Logic.MainActivityMenu.Menu" />
         </activity>
-        <activity android:name=".Menu">
+        <activity android:name=".Logic.MainActivityMenu.Menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
