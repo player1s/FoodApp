@@ -1,5 +1,6 @@
 package com.app.foodapp;
 
+<<<<<<< HEAD
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+=======
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+>>>>>>> parent of 73498c5... pressing buttons takes to a new activity using intents
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -20,6 +25,7 @@ public class Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+<<<<<<< HEAD
 
         final FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -47,5 +53,8 @@ public class Menu extends AppCompatActivity {
 
             }
         });
+=======
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+>>>>>>> parent of 73498c5... pressing buttons takes to a new activity using intents
     }
 }
