@@ -31,7 +31,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
 
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         viewHolder.name.setText(mPokemons.get(position).getName());
-//        viewHolder.price.setText(mPokemons.get(position).getPrice());
+        viewHolder.price.setText(Integer.toString(mPokemons.get(position).getPrice()));
         viewHolder.icon.setImageResource(mPokemons.get(position).getIconId());
     }
 
@@ -49,7 +49,7 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
 
             super(itemView);
             name = itemView.findViewById(R.id.tv_name);
-            name = itemView.findViewById(R.id.tv_price);
+            price = itemView.findViewById(R.id.tv_price);
             icon = itemView.findViewById(R.id.iv_icon);
             itemView.setOnClickListener(this);
         }
