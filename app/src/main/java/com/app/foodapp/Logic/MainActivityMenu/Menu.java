@@ -18,13 +18,18 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Menu extends AppCompatActivity implements PokemonAdapter.OnListItemClickListener{
 
     RecyclerView mPokemonList;
     RecyclerView.Adapter mPokemonAdapter;
+    Gson gson = new Gson();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,33 +41,58 @@ public class Menu extends AppCompatActivity implements PokemonAdapter.OnListItem
         mPokemonList.hasFixedSize();
         mPokemonList.setLayoutManager(new LinearLayoutManager(this));
 
-        ArrayList<Pokemon> pokemons = new ArrayList<>();
-        pokemons.add(new Pokemon("Bulbasaur", R.drawable.p1, 1, 12));
-        pokemons.add(new Pokemon("Ivysaur", R.drawable.p2, 2, 43));
 
 
+        final ArrayList<Pokemon> pokemons = new ArrayList<>();
 
-        mPokemonAdapter = new PokemonAdapter(pokemons, this);
-        mPokemonList.setAdapter(mPokemonAdapter);
+        //-----------------Firestore read start---------------------------------------------------------------
 
-                //-----------------Firestore read start---------------------------------------------------------------
+        final FirebaseFirestore db = FirebaseFirestore.getInstance();
+        final PokemonAdapter.OnListItemClickListener listener = this;
 
-                final FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("/Restaurants/Restaurant1/Menu").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task)  {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
 
-                db.collection("Restaurants").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                            @Override
-                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                if (task.isSuccessful()) {
-                                    for (QueryDocumentSnapshot document : task.getResult()) {
-                                        System.out.println(document.getId() + " => " + document.getData());
-                                    }
-                                } else {
-                                    System.out.println("Error getting documents." + task.getException());
-                                }
+                        Pokemon pokemon = new Pokemon(null, 0, 0, 0);
+
+                        Map<String, Object> map = document.getData();
+                        for (Map.Entry<String, Object> entry : map.entrySet()) {
+                            System.out.println(entry.getKey() + "/" + entry.getValue());
+                            if(entry.getKey().equals("Id")){
+
+                                pokemon.setId(Integer.parseInt(entry.getValue().toString()));
                             }
-                        });
-                //---------------Firestore read end-----------------------------------------------------------------
+                            if(entry.getKey().equals("PicId")){
 
+                                pokemon.setIconId(Integer.parseInt(entry.getValue().toString()));
+                            }
+                            if(entry.getKey().equals("name")){
+
+                                pokemon.setName(entry.getValue().toString());
+                            }
+                            if(entry.getKey().equals("Price")){
+
+                                pokemon.setPrice(Integer.parseInt(entry.getValue().toString()));
+                            }
+                        }
+
+                        pokemons.add(pokemon);
+
+                        System.out.println(document.getId() + " => " + document.getData());
+                    }
+                } else {
+                    System.out.println("Error getting documents." + task.getException());
+                }
+                pokemons.add(new Pokemon("Bulbasaur", R.drawable.p1, 1, 12));
+                pokemons.add(new Pokemon("Ivysaur", R.drawable.p2, 2, 43));
+                mPokemonAdapter = new PokemonAdapter(pokemons, listener);
+                mPokemonList.setAdapter(mPokemonAdapter);
+            }
+        });
+        //---------------Firestore read end-----------------------------------------------------------------
     }
 
     @Override
