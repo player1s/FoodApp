@@ -19,7 +19,7 @@ public class AddressDBHelper extends SQLiteOpenHelper {
                     + AddressContract.AddressEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                     + AddressContract.AddressEntry.COLUMN_CITY_NAME + " TEXT NOT NULL, "
                     + AddressContract.AddressEntry.COLUMN_STREET_NAME + " TEXT NOT NULL, "
-                    + AddressContract.AddressEntry.COLUMN_HOUSE_NUMBEBR + " TEXT NOT NULL);";
+                    + AddressContract.AddressEntry.COLUMN_HOUSE_NUMBER + " TEXT NOT NULL);";
 
             db.execSQL(SQL_CREATE_ADDRESS_TABLE);
         }

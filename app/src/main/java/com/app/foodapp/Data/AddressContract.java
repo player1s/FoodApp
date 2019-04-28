@@ -9,7 +9,7 @@ public final class AddressContract {
         public final static String _ID = BaseColumns._ID;
         public final static String COLUMN_CITY_NAME ="city";
         public final static String COLUMN_STREET_NAME ="street";
-        public final static String COLUMN_HOUSE_NUMBEBR ="number";
+        public final static String COLUMN_HOUSE_NUMBER ="number";
 
     }
 }

@@ -7,6 +7,14 @@
     tools:context=".Logic.Settings.Settings">
 
     <TextView
+        android:id="@+id/tvSettingsDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="135dp"
+        android:text="q1"/>
+
+    <TextView
         android:id="@+id/tvSettingsCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
