@@ -8,10 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
-
+import android.support.v7.widget.Toolbar;
 
 import com.app.foodapp.Logic.IngredientsSelector.InredientsSelector;
+import com.app.foodapp.Logic.Settings.Settings;
 import com.app.foodapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,17 +27,21 @@ public class Menu extends AppCompatActivity implements MenuItemAdapter.OnListIte
     RecyclerView mItemList;
     MenuItemAdapter mMenuItemAdapter;
     Context context = this;
+    private Toolbar mTopToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        mTopToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(mTopToolbar);
+
         mItemList = findViewById(R.id.recview);
         mItemList.hasFixedSize();
         mItemList.setLayoutManager(new LinearLayoutManager(this));
 
-        fireStoreRead("/Restaurants/Restaurant1/Lunch");
+        fireStoreRead("/Restaurants/Restaurant1/Breakfast");
 
         //---------------Bottom navbar navigation start-----------------------------------------------------
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
@@ -65,6 +69,29 @@ public class Menu extends AppCompatActivity implements MenuItemAdapter.OnListIte
                 return true;
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.appbarmenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            Intent intent = new Intent(getBaseContext(), Settings.class);
+            startActivity(intent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -100,19 +127,15 @@ public class Menu extends AppCompatActivity implements MenuItemAdapter.OnListIte
                         for (Map.Entry<String, Object> entry : map.entrySet()) {
                             System.out.println(entry.getKey() + "/" + entry.getValue());
                             if(entry.getKey().equals("id")){
-
                                 menuItem.setId(Integer.parseInt(entry.getValue().toString()));
                             }
                             if(entry.getKey().equals("PicId")){
-
                                 menuItem.setIconId(Integer.parseInt(entry.getValue().toString()));
                             }
                             if(entry.getKey().equals("name")){
-
                                 menuItem.setName(entry.getValue().toString());
                             }
                             if(entry.getKey().equals("price")){
-
                                 menuItem.setPrice(Integer.parseInt(entry.getValue().toString()));
                             }
                         }
