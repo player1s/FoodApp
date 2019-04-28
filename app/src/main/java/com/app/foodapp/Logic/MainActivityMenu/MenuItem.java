@@ -1,12 +1,12 @@
 package com.app.foodapp.Logic.MainActivityMenu;
 
-public class Pokemon {
+public class MenuItem {
     private String Name;
     private int IconId;
     private int Id;
     private int price;
 
-    public Pokemon(String name, int iconId, int id, int price) {
+    public MenuItem(String name, int iconId, int id, int price) {
         Name = name;
         IconId = iconId;
         Id = id;

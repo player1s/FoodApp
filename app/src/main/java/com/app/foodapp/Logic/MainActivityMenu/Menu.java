@@ -6,9 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 
 import com.app.foodapp.Logic.IngredientsSelector.InredientsSelector;
@@ -18,18 +15,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
-
-public class Menu extends AppCompatActivity implements PokemonAdapter.OnListItemClickListener{
+public class Menu extends AppCompatActivity implements MenuItemAdapter.OnListItemClickListener{
 
     RecyclerView mPokemonList;
-    PokemonAdapter mPokemonAdapter;
+    MenuItemAdapter mMenuItemAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +36,12 @@ public class Menu extends AppCompatActivity implements PokemonAdapter.OnListItem
 
 
 
-        final ArrayList<Pokemon> pokemons = new ArrayList<>();
+        final ArrayList<MenuItem> menuItems = new ArrayList<>();
 
         //-----------------Firestore read start---------------------------------------------------------------
 
         final FirebaseFirestore db = FirebaseFirestore.getInstance();
-        final PokemonAdapter.OnListItemClickListener listener = this;
+        final MenuItemAdapter.OnListItemClickListener listener = this;
 
         db.collection("/Restaurants/Restaurant1/Menu").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -56,30 +49,30 @@ public class Menu extends AppCompatActivity implements PokemonAdapter.OnListItem
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
 
-                        Pokemon pokemon = new Pokemon(null, 0, 0, 0);
+                        MenuItem menuItem = new MenuItem(null, 0, 0, 0);
 
                         Map<String, Object> map = document.getData();
                         for (Map.Entry<String, Object> entry : map.entrySet()) {
                             System.out.println(entry.getKey() + "/" + entry.getValue());
                             if(entry.getKey().equals("Id")){
 
-                                pokemon.setId(Integer.parseInt(entry.getValue().toString()));
+                                menuItem.setId(Integer.parseInt(entry.getValue().toString()));
                             }
                             if(entry.getKey().equals("PicId")){
 
-                                pokemon.setIconId(Integer.parseInt(entry.getValue().toString()));
+                                menuItem.setIconId(Integer.parseInt(entry.getValue().toString()));
                             }
                             if(entry.getKey().equals("name")){
 
-                                pokemon.setName(entry.getValue().toString());
+                                menuItem.setName(entry.getValue().toString());
                             }
                             if(entry.getKey().equals("Price")){
 
-                                pokemon.setPrice(Integer.parseInt(entry.getValue().toString()));
+                                menuItem.setPrice(Integer.parseInt(entry.getValue().toString()));
                             }
                         }
 
-                        pokemons.add(pokemon);
+                        menuItems.add(menuItem);
 
                         System.out.println(document.getId() + " => " + document.getData());
                     }
@@ -87,14 +80,20 @@ public class Menu extends AppCompatActivity implements PokemonAdapter.OnListItem
                     System.out.println("Error getting documents." + task.getException());
                 }
 
-                /*
-                int resid = R.drawable.p1;
-                System.out.println(resid);
-                // finding out the id of the given pic
-                */
 
-                mPokemonAdapter = new PokemonAdapter(pokemons, listener);
-                mPokemonList.setAdapter(mPokemonAdapter);
+                int resid = R.drawable.respizza;
+                System.out.println(resid);
+                int resid2 = R.drawable.resgoulash;
+                System.out.println(resid2);
+                int resid3 = R.drawable.reslasagna;
+                System.out.println(resid3);
+                int resid4 = R.drawable.resccc;
+                System.out.println(resid4);
+                // finding out the id of the given pic
+
+
+                mMenuItemAdapter = new MenuItemAdapter(menuItems, listener);
+                mPokemonList.setAdapter(mMenuItemAdapter);
             }
         });
         //---------------Firestore read end-----------------------------------------------------------------
@@ -103,11 +102,11 @@ public class Menu extends AppCompatActivity implements PokemonAdapter.OnListItem
     @Override
     public void onListItemClick(int clickedItemIndex) {
 
-        Pokemon selectedPokemon = mPokemonAdapter.getItem(clickedItemIndex);
+        MenuItem selectedMenuItem = mMenuItemAdapter.getItem(clickedItemIndex);
 
         Intent intent = new Intent(getBaseContext(), InredientsSelector.class);
-        intent.putExtra("id", selectedPokemon.getId());
-        intent.putExtra("name", selectedPokemon.getName());
+        intent.putExtra("id", selectedMenuItem.getId());
+        intent.putExtra("name", selectedMenuItem.getName());
         startActivity(intent);
 
     }

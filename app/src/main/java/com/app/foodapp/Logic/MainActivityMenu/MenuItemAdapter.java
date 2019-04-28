@@ -12,13 +12,13 @@ import com.app.foodapp.R;
 
 import java.util.ArrayList;
 
-public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHolder> {
+public class MenuItemAdapter extends RecyclerView.Adapter<MenuItemAdapter.ViewHolder> {
 
-    private ArrayList<Pokemon> mPokemons;
+    private ArrayList<MenuItem> mMenuItems;
     final private OnListItemClickListener mOnListItemClickListener;
 
-    PokemonAdapter(ArrayList<Pokemon> pokemons, OnListItemClickListener listener){
-        mPokemons = pokemons;
+    MenuItemAdapter(ArrayList<MenuItem> menuItems, OnListItemClickListener listener){
+        mMenuItems = menuItems;
         mOnListItemClickListener = listener;
     }
 
@@ -30,17 +30,17 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
     }
 
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        viewHolder.name.setText(mPokemons.get(position).getName());
-        viewHolder.price.setText(Integer.toString(mPokemons.get(position).getPrice()));
-        viewHolder.icon.setImageResource(mPokemons.get(position).getIconId());
+        viewHolder.name.setText(mMenuItems.get(position).getName());
+        viewHolder.price.setText(Integer.toString(mMenuItems.get(position).getPrice()));
+        viewHolder.icon.setImageResource(mMenuItems.get(position).getIconId());
     }
 
     public int getItemCount() {
-        return mPokemons.size();
+        return mMenuItems.size();
     }
 
-    public Pokemon getItem(int position) {
-        return mPokemons.get(position);
+    public MenuItem getItem(int position) {
+        return mMenuItems.get(position);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
