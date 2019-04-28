@@ -3,21 +3,21 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnBottomNavigationMenuBreakfast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Breakfast" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnBottomNavigationMenuLunch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Lunch" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnBottomNavigationMenuDinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"

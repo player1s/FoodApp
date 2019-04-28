@@ -8,14 +8,14 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Bulbasaur" />
+        />
 
     <TextView
         android:id="@+id/tv_price"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Bulbasaur" />
+        />
 
     <ImageView
         android:id="@+id/iv_icon"
