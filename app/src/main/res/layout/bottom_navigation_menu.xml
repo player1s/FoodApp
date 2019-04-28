@@ -7,19 +7,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Breakfast" />
+        android:text="@string/Breakfast" />
 
     <Button
         android:id="@+id/btnBottomNavigationMenuLunch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Lunch" />
+        android:text="@string/Lunch" />
 
     <Button
         android:id="@+id/btnBottomNavigationMenuDinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Dinner" />
+        android:text="@string/Dinner" />
 </LinearLayout>

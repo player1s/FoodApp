@@ -10,7 +10,7 @@
         android:id="@+id/btnOrderConfirmedBackToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back to the menu"
+        android:text="@string/BackToMenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="Featured reads for your order: " />
+        android:text="@string/FeaturedReads" />
 
     <TextView
         android:id="@+id/tvOrderConfirmedBook"

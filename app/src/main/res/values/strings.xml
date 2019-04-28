@@ -3,4 +3,16 @@
     <string name="title_activity_inredients_selector">InredientsSelector</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_order_confirmed">OrderConfirmed</string>
+    <string name="UnderConstruction">Under construction</string>
+    <string name="Order">Order</string>
+    <string name="BackToMenu">Back to menu</string>
+    <string name="FeaturedReads">Featured reads for your order:</string>
+    <string name="CityQuestion">Which city do you live in?</string>
+    <string name="StreetQuestion">Which street do you live in?</string>
+    <string name="NumberQuestion">Which house number do you live in?</string>
+    <string name="SaveAndBack">Save and back to menu</string>
+    <string name="Breakfast">Breakfast</string>
+    <string name="Lunch">Lunch</string>
+    <string name="Dinner">Dinner</string>
+
 </resources>

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
         android:layout_marginStart="135dp"
-        android:text="Which city do you live in?"/>
+        android:text="@string/CityQuestion"/>
 
     <EditText
         android:id="@+id/etSettingsCity"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
         android:layout_marginStart="135dp"
-        android:text="a1"/>
+        android:text=""/>
 
     <TextView
         android:id="@+id/tvSettingsStreet"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="225dp"
         android:layout_marginStart="135dp"
-        android:text="Which street do you live in?"/>
+        android:text="@string/StreetQuestion"/>
 
     <EditText
         android:id="@+id/etSettingsStreet"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
         android:layout_marginStart="135dp"
-        android:text="a1"/>
+        android:text=""/>
 
     <TextView
         android:id="@+id/tvSettingsNumber"
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="375dp"
         android:layout_marginStart="135dp"
-        android:text="Which house number do you live in?"/>
+        android:text="@string/NumberQuestion"/>
 
     <EditText
         android:id="@+id/etSettingsNumber"
@@ -52,13 +52,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="450dp"
         android:layout_marginStart="135dp"
-        android:text="a1"/>
+        android:text=""/>
 
     <Button
         android:id="@+id/btnSettingsBackToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save and back to menu"
+        android:text="@string/SaveAndBack"
         android:layout_marginTop="525dp"
         android:layout_marginStart="100dp"/>
 
