@@ -24,12 +24,12 @@ import com.google.gson.JsonElement;
 import java.util.ArrayList;
 import java.util.Map;
 
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
+
 public class Menu extends AppCompatActivity implements PokemonAdapter.OnListItemClickListener{
 
     RecyclerView mPokemonList;
-    RecyclerView.Adapter mPokemonAdapter;
-    Gson gson = new Gson();
-
+    PokemonAdapter mPokemonAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,8 +93,6 @@ public class Menu extends AppCompatActivity implements PokemonAdapter.OnListItem
                 // finding out the id of the given pic
                 */
 
-                //pokemons.add(new Pokemon("Bulbasaur", R.drawable.p1, 1, 12));
-                //pokemons.add(new Pokemon("Ivysaur",7000123, 2, 43));
                 mPokemonAdapter = new PokemonAdapter(pokemons, listener);
                 mPokemonList.setAdapter(mPokemonAdapter);
             }
@@ -105,12 +103,12 @@ public class Menu extends AppCompatActivity implements PokemonAdapter.OnListItem
     @Override
     public void onListItemClick(int clickedItemIndex) {
 
+        Pokemon selectedPokemon = mPokemonAdapter.getItem(clickedItemIndex);
+
         Intent intent = new Intent(getBaseContext(), InredientsSelector.class);
-        //intent.putExtra(EXTRA_MESSAGE, message);
+        intent.putExtra("id", selectedPokemon.getId());
+        intent.putExtra("name", selectedPokemon.getName());
         startActivity(intent);
-        /*
-        int pokemonNumber = clickedItemIndex + 1;
-        Toast.makeText(this, "Pokemon Number: " + pokemonNumber, Toast.LENGTH_SHORT).show();
-        */
+
     }
 }

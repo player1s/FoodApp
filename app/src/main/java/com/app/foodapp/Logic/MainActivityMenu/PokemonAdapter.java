@@ -39,6 +39,10 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
         return mPokemons.size();
     }
 
+    public Pokemon getItem(int position) {
+        return mPokemons.get(position);
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView name;
