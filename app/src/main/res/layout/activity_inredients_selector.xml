@@ -11,28 +11,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Order"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/indexshow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="300dp"
+        android:layout_marginStart="160dp" />
 
     <TextView
         android:id="@+id/nameshow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"/>
+        android:layout_marginTop="230dp"
+        android:layout_marginStart="190dp" />
 
     <TextView
         android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginStart="140dp"
         android:text="@string/UnderConstruction" />
 
 </android.support.design.widget.CoordinatorLayout>

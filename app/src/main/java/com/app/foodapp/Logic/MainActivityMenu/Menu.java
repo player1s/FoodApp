@@ -56,13 +56,13 @@ public class Menu extends AppCompatActivity implements MenuItemAdapter.OnListIte
                 System.out.println("it thinks itemid: " + item.getItemId());
 
                 switch (item.getItemId()) {
-                    case 2131230759:
+                    case 2131230760:
                         fireStoreRead("/Restaurants/Restaurant1/Breakfast");
                         break;
-                    case 2131230839:
+                    case 2131230842:
                         fireStoreRead("/Restaurants/Restaurant1/Lunch");
                         break;
-                    case 2131230797:
+                    case 2131230798:
                         fireStoreRead("/Restaurants/Restaurant1/Dinner");
                         break;
                 }

@@ -20,11 +20,8 @@ public class InredientsSelector extends AppCompatActivity {
         setContentView(R.layout.activity_inredients_selector);
 
         Intent intent = getIntent();
-        int Id = intent.getExtras().getInt("id");
         String name = intent.getExtras().getString("name");
-        TextView tv = findViewById(R.id.indexshow);
         TextView tv2 = findViewById(R.id.nameshow);
-        tv.setText(Integer.toString(Id));
         tv2.setText(name);
 
         final Button button = findViewById(R.id.btnIngredientsSelectorOrder);
