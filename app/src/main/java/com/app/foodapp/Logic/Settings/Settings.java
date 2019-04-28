@@ -46,9 +46,8 @@ public class Settings extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), Menu.class);
 
+                deleteAllAddresses();
                 insertAddress();
-
-                //intent.putExtra(EXTRA_MESSAGE, message);
                 startActivity(intent);
             }
         });
@@ -77,13 +76,7 @@ public class Settings extends AppCompatActivity {
         Cursor cursor = db.query(
                 AddressContract.AddressEntry.TABLE_NAME, projection, null, null, null, null, null);
 
-        TextView displayView = (TextView) findViewById(R.id.tvSettingsDisplay);
-
         try {
-            displayView.append(AddressContract.AddressEntry._ID + " - " +
-                    AddressContract.AddressEntry.COLUMN_CITY_NAME + " - " +
-                    AddressContract.AddressEntry.COLUMN_STREET_NAME + " - " +
-                    AddressContract.AddressEntry.COLUMN_HOUSE_NUMBER + " - " + "\n");
 
             while (cursor.moveToNext()) {
                 int currentID = cursor.getInt(cursor.getColumnIndex(AddressContract.AddressEntry._ID));
@@ -91,15 +84,18 @@ public class Settings extends AppCompatActivity {
                 String street = cursor.getString(cursor.getColumnIndex(AddressContract.AddressEntry.COLUMN_STREET_NAME));
                 String houseNum = cursor.getString(cursor.getColumnIndex(AddressContract.AddressEntry.COLUMN_HOUSE_NUMBER));
 
+                etCity.setText(city);
+                etStreet.setText(street);
+                etHouseNum.setText(houseNum);
 
-                displayView.append(("\n" + currentID + " - " +
-                        city + " - " +
-                        street + " - " +
-                        houseNum));
             }
         } finally {
             cursor.close();
         }
+    }
+
+    private void deleteAllAddresses() {
+        writeableDB.delete(AddressContract.AddressEntry.TABLE_NAME, null, null);
     }
 
 }

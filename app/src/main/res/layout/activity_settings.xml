@@ -7,20 +7,12 @@
     tools:context=".Logic.Settings.Settings">
 
     <TextView
-        android:id="@+id/tvSettingsDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="135dp"
-        android:text="q1"/>
-
-    <TextView
         android:id="@+id/tvSettingsCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="75dp"
         android:layout_marginStart="135dp"
-        android:text="q1"/>
+        android:text="Which city do you live in?"/>
 
     <EditText
         android:id="@+id/etSettingsCity"
@@ -36,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="225dp"
         android:layout_marginStart="135dp"
-        android:text="q1"/>
+        android:text="Which street do you live in?"/>
 
     <EditText
         android:id="@+id/etSettingsStreet"
@@ -52,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="375dp"
         android:layout_marginStart="135dp"
-        android:text="q1"/>
+        android:text="Which house number do you live in?"/>
 
     <EditText
         android:id="@+id/etSettingsNumber"
