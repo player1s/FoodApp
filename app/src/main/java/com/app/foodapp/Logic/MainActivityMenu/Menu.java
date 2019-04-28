@@ -80,7 +80,7 @@ public class Menu extends AppCompatActivity implements MenuItemAdapter.OnListIte
                     System.out.println("Error getting documents." + task.getException());
                 }
 
-
+/*
                 int resid = R.drawable.respizza;
                 System.out.println(resid);
                 int resid2 = R.drawable.resgoulash;
@@ -90,7 +90,7 @@ public class Menu extends AppCompatActivity implements MenuItemAdapter.OnListIte
                 int resid4 = R.drawable.resccc;
                 System.out.println(resid4);
                 // finding out the id of the given pic
-
+*/
 
                 mMenuItemAdapter = new MenuItemAdapter(menuItems, listener);
                 mPokemonList.setAdapter(mMenuItemAdapter);

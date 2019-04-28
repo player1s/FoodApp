@@ -25,7 +25,7 @@ public class MenuItemAdapter extends RecyclerView.Adapter<MenuItemAdapter.ViewHo
     @NonNull
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.pokemon_list_item, parent, false);
+        View view = inflater.inflate(R.layout.menu_list_item, parent, false);
         return new ViewHolder(view);
     }
 
