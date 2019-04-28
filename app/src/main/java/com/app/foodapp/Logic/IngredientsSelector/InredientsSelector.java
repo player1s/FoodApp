@@ -10,8 +10,6 @@ import android.widget.TextView;
 import com.app.foodapp.Logic.OrderConfirmed.OrderConfirmed;
 import com.app.foodapp.R;
 
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
-
 public class InredientsSelector extends AppCompatActivity {
 
     @Override
@@ -28,7 +26,6 @@ public class InredientsSelector extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), OrderConfirmed.class);
-                //intent.putExtra(EXTRA_MESSAGE, message);
                 startActivity(intent);
             }
         });

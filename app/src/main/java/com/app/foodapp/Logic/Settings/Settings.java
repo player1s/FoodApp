@@ -9,12 +9,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.app.foodapp.Data.AddressContract;
 import com.app.foodapp.Data.AddressDBHelper;
 import com.app.foodapp.Logic.MainActivityMenu.Menu;
-import com.app.foodapp.Logic.OrderConfirmed.OrderConfirmed;
 import com.app.foodapp.R;
 
 public class Settings extends AppCompatActivity {

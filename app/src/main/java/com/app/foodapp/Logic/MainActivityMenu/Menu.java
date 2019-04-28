@@ -26,7 +26,6 @@ public class Menu extends AppCompatActivity implements MenuItemAdapter.OnListIte
 
     RecyclerView mItemList;
     MenuItemAdapter mMenuItemAdapter;
-    Context context = this;
     private Toolbar mTopToolbar;
 
     @Override
@@ -34,7 +33,7 @@ public class Menu extends AppCompatActivity implements MenuItemAdapter.OnListIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        mTopToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        mTopToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(mTopToolbar);
 
         mItemList = findViewById(R.id.recview);
@@ -44,16 +43,17 @@ public class Menu extends AppCompatActivity implements MenuItemAdapter.OnListIte
         fireStoreRead("/Restaurants/Restaurant1/Breakfast");
 
         //---------------Bottom navbar navigation start-----------------------------------------------------
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
             @Override
             public boolean onNavigationItemSelected(@NonNull android.view.MenuItem item) {
-                System.out.println("breakfast itemid: " + R.id.btnBottomNavigationMenuBreakfast);
-                System.out.println("lunch itemid: " + R.id.btnBottomNavigationMenuLunch);
-                System.out.println("dinner itemid: " + R.id.btnBottomNavigationMenuDinner);
 
                 System.out.println("it thinks itemid: " + item.getItemId());
+
+                //these numbers are the integer ids of the resources, ids, all that
+                //here im using that to determine which button was tapped
+                //this is for the bottom menu bar
 
                 switch (item.getItemId()) {
                     case 2131230760:
@@ -80,9 +80,7 @@ public class Menu extends AppCompatActivity implements MenuItemAdapter.OnListIte
 
     @Override
     public boolean onOptionsItemSelected(android.view.MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         if (id == R.id.action_settings) {
@@ -98,6 +96,8 @@ public class Menu extends AppCompatActivity implements MenuItemAdapter.OnListIte
     public void onListItemClick(int clickedItemIndex) {
 
         MenuItem selectedMenuItem = mMenuItemAdapter.getItem(clickedItemIndex);
+
+        //passing on ID of the selected menu item and name for later use
 
         Intent intent = new Intent(getBaseContext(), InredientsSelector.class);
         intent.putExtra("id", selectedMenuItem.getId());
@@ -148,12 +148,12 @@ public class Menu extends AppCompatActivity implements MenuItemAdapter.OnListIte
                     System.out.println("Error getting documents." + task.getException());
                 }
 
-
+/*
                 int resid = R.drawable.respizza;
                 System.out.println(resid);
                 int resid2 = R.drawable.ressandwich;
                 System.out.println(resid2);
-                /*
+
                 int resid3 = R.drawable.reslasagna;
                 System.out.println(resid3);
                 int resid4 = R.drawable.resccc;
