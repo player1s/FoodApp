@@ -4,7 +4,7 @@ import android.provider.BaseColumns;
 
 public final class AddressContract {
     private AddressContract() {}
-    public static final class PetEntry implements BaseColumns {
+    public static final class AddressEntry implements BaseColumns {
         public final static String TABLE_NAME = "address";
         public final static String _ID = BaseColumns._ID;
         public final static String COLUMN_CITY_NAME ="city";
